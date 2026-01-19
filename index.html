@@ -2,21 +2,54 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Bài Tập - Minh Vy</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; background-color: #f0f2f5; padding: 50px; }
-        .container { background: white; padding: 30px; border-radius: 10px; display: inline-block; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        .btn { display: block; width: 200px; padding: 15px; margin: 10px auto; background: #007bff; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; }
-        .btn:hover { background: #0056b3; }
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            background-color: #f0f2f5; 
+            padding: 50px; 
+            margin: 0;
+        }
+        .container { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 10px; 
+            display: inline-block; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+            min-width: 300px;
+        }
+        h1 { color: #333; }
+        hr { border: 0; height: 1px; background: #eee; margin: 20px 0; }
+        
+        .btn { 
+            display: block; 
+            width: 200px; 
+            padding: 15px; 
+            margin: 15px auto; 
+            background: #007bff; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            transition: background 0.3s ease;
+        }
+        .btn:hover { 
+            background: #0056b3; 
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Danh Sách Bài Tập Lab</h1>
-        <p>Họ tên: Minh Vy</p>
+        <p>Họ tên: <strong>Minh Vy</strong></p>
         <hr>
         <a href="lab1/index.html" class="btn">Xem Bài Lab 1</a>
         <a href="lab2/index.html" class="btn">Xem Bài Lab 2</a>
+        <a href="lab3/index.html" class="btn">Xem Bài Lab 3</a>
+        <a href="baitap1/index.html" class="btn">Xem Bai Tap 1</a>
     </div>
 </body>
 </html>
