@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleShop - Giày Chính Hãng</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cursor"></div>
+
+    <nav class="navbar">
+        <div class="logo">STYLE<span>SHOP</span></div>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-item active">Trang chủ</a></li>
+            <li><a href="#products" class="nav-item">Sản phẩm</a></li>
+            <li><a href="#sale" class="nav-item">Khuyến mãi</a></li>
+            <li><button id="dark-mode-toggle" class="mode-btn">🌙</button></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="fade-in-text">BƯỚC CHÂN TỰ TIN</h1>
+            <p class="fade-in-sub">Bộ sưu tập Sneaker 2024 - Đẳng cấp & Phong cách.</p>
+            <button class="cta-btn pulse-animation">MUA NGAY</button>
+        </div>
+        
+        <div class="marquee-container">
+            <p class="marquee-text">
+                🔥 FLASH SALE: Giảm 50% tất cả giày Nike & Adidas trong hôm nay! — Miễn phí vận chuyển đơn từ 500k — Đổi trả trong 30 ngày! 🔥
+            </p>
+        </div>
+    </section>
+
+    <section id="products" class="container">
+        <h2 class="section-title reveal">Sản Phẩm Bán Chạy</h2>
+        
+        <div class="product-grid">
+            <div class="card reveal">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600" alt="Nike Red">
+                </div>
+                <div class="card-info">
+                    <h3>Nike Air Max Red</h3>
+                    <p class="price">3.200.000₫</p>
+                    <button class="add-btn">Thêm vào giỏ</button>
+                </div>
+            </div>
+
+            <div class="card reveal">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=600" alt="Puma">
+                </div>
+                <div class="card-info">
+                    <h3>Puma RS-X Tech</h3>
+                    <p class="price">2.800.000₫</p>
+                    <button class="add-btn">Thêm vào giỏ</button>
+                </div>
+            </div>
+
+            <div class="card reveal">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600" alt="Nike Green">
+                </div>
+                <div class="card-info">
+                    <h3>Nike Jordan High</h3>
+                    <p class="price">4.500.000₫</p>
+                    <button class="add-btn">Thêm vào giỏ</button>
+                </div>
+            </div>
+
+            <div class="card reveal">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600" alt="Nike White">
+                </div>
+                <div class="card-info">
+                    <h3>Nike Air Force 1</h3>
+                    <p class="price">2.100.000₫</p>
+                    <button class="add-btn">Thêm vào giỏ</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sale" class="promo reveal">
+        <div class="promo-content">
+            <h2>ĐĂNG KÝ THÀNH VIÊN</h2>
+            <p>Nhận ngay Voucher 200k cho đơn hàng đầu tiên.</p>
+            <button class="cta-btn">ĐĂNG KÝ NGAY</button>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
