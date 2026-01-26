@@ -1,0 +1,35 @@
+<main style="padding-top: 120px;">
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Liên Hệ Với Tôi</h2>
+            
+            <div class="contact-wrapper" data-aos="fade-up" data-aos-delay="200">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" class="form-input" placeholder=" " required>
+                        <label for="name" class="floating-label">Họ và Tên</label>
+                        <span class="error-msg">Tên không được để trống</span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" class="form-input" placeholder=" " required>
+                        <label for="email" class="floating-label">Email</label>
+                        <span class="error-msg">Email không hợp lệ</span>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea id="message" name="message" class="form-input" placeholder=" " required></textarea>
+                        <label for="message" class="floating-label">Tin nhắn</label>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="btn btn-primary">
+                        <span class="btn-text">Gửi Tin Nhắn</span>
+                        <div class="loading-spinner"></div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div id="toast" class="toast">Gửi tin nhắn thành công!</div>
+</main>

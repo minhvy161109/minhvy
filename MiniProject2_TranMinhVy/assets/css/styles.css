@@ -1,0 +1,494 @@
+/* --- HERO SECTION STYLES --- */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    overflow: hidden; /* Tránh vỡ layout khi animation bay từ ngoài vào */
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-content {
+    flex: 1;
+    padding-right: 50px;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.hero-title .highlight {
+    color: var(--primary-color);
+}
+
+.hero-desc {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #666;
+    max-width: 500px;
+}
+
+/* Hình khối giả lập làm ảnh Hero */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.abstract-shape {
+    width: 400px;
+    height: 400px;
+    background: var(--primary-color);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    animation: blob 5s ease-in-out infinite; /* Animation CSS đơn giản */
+    box-shadow: 0 10px 30px rgba(74, 144, 226, 0.3);
+}
+
+@keyframes blob {
+    0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+    50% { border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%; }
+    100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+}
+
+/* --- BUTTON ANIMATION NÂNG CAO (Yêu cầu Bài 2) --- */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-right: 15px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
+}
+
+/* Hiệu ứng Hover: Nổi lên + Đổi màu */
+.btn:hover {
+    transform: translateY(-3px); /* Bay lên nhẹ */
+    box-shadow: 0 8px 25px rgba(74, 144, 226, 0.6);
+}
+
+.btn-outline {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* --- CARD 3D FLIP (Yêu cầu Bài 2) --- */
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 300px;
+    perspective: 1000px; /* Tạo không gian 3D */
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d; /* Giữ trạng thái 3D cho phần tử con */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+    border-radius: 15px;
+}
+
+/* Hover vào thì xoay 180 độ */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Ẩn mặt sau khi xoay */
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.flip-card-front {
+    background-color: white;
+    color: var(--text-color);
+}
+
+.flip-card-front i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.flip-card-back {
+    background-color: var(--primary-color);
+    color: white;
+    transform: rotateY(180deg); /* Mặt sau mặc định đã xoay 180 độ */
+}
+
+/* Responsive cho Hero */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        justify-content: center;
+    }
+    .hero-content { padding-right: 0; }
+    .hero-image { margin-bottom: 30px; }
+    .hero-title { font-size: 2.5rem; }
+}
+/* --- RESET CSS CƠ BẢN --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+:root {
+    --primary-color: #4a90e2;
+    --text-color: #333;
+    --bg-color: #f4f4f4;
+    --header-height: 70px;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- HEADER & STICKY (Yêu cầu Bài 1) --- */
+header {
+    position: fixed; /* Sticky Header */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background: transparent;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+/* Class này sẽ được JS thêm vào khi scroll */
+header.sticky {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* --- DESKTOP MENU --- */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s;
+}
+
+/* Active Menu Highlight (Yêu cầu Bài 1) */
+.nav-link.active, .nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s;
+}
+
+.nav-link.active::after, .nav-link:hover::after {
+    width: 100%;
+}
+
+/* --- MOBILE MENU (Yêu cầu Bài 1) --- */
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: var(--header-height);
+        right: -100%; /* Giấu menu sang phải */
+        width: 100%;
+        height: calc(100vh - var(--header-height));
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.4s ease-in-out; /* Animation trượt */
+    }
+
+    /* Class mở menu mobile */
+    .nav-links.open {
+        right: 0;
+    }
+}
+
+/* --- LAYOUT CHUNG (Grid/Flex) --- */
+section {
+    padding: 100px 0;
+    min-height: 100vh; /* Để test scroll */
+}
+/* Chia 3 cột */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Hiệu ứng lật 3D */
+.flip-card {
+    background-color: transparent;
+    height: 300px;
+    perspective: 1000px; /* Quan trọng để có hiệu ứng 3D */
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.flip-card-back {
+    background: #007bff;
+    color: white;
+    transform: rotateY(180deg);
+}
+/* --- BÀI 3: GALLERY & REVEAL EFFECT --- */
+.portfolio-section {
+    padding: 80px 0;
+}
+
+.reveal-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Masonry/Grid layout */
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden; /* Cần thiết để giấu lớp phủ bên dưới */
+    border-radius: 12px;
+    height: 300px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Hiệu ứng Reveal (Lớp phủ trượt lên) */
+.gallery-overlay {
+    position: absolute;
+    bottom: -100%; /* Giấu lớp phủ ở dưới cùng */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 123, 255, 0.8); /* Màu xanh trùng với Primary color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: 0.4s ease-in-out;
+}
+
+.gallery-item:hover .gallery-overlay {
+    bottom: 0; /* Trượt lên khi hover */
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* Phóng to ảnh nhẹ khi hover */
+}
+/* --- BÀI 4: FORM & INTERACTION --- */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Kỹ thuật Floating Label bằng CSS :focus-within hoặc :placeholder-shown */
+.floating-label {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.form-input:focus + .floating-label,
+.form-input:not(:placeholder-shown) + .floating-label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    background: #fff;
+    padding: 0 5px;
+    color: #007bff;
+}
+
+/* Validation Style */
+.error-msg {
+    color: red;
+    font-size: 12px;
+    display: none;
+    margin-top: 5px;
+}
+
+.form-input.invalid { border-color: red; }
+.form-input.invalid ~ .error-msg { display: block; }
+
+/* Loading Spinner */
+.loading-spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-top: 3px solid #fff;
+    border-radius: 50%;
+    display: none;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Toast Notification */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: -300px;
+    background: #28a745;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    transition: 0.5s;
+    z-index: 9999;
+}
+.toast.show { right: 20px; }
+/* --- BÀI 5: TIMELINE & SLIDER --- */
+/* Slider Swiper */
+.swiper { width: 100%; height: 200px; background: #f0f7ff; border-radius: 15px; }
+.swiper-slide { display: flex; align-items: center; justify-content: center; font-style: italic; font-size: 1.2rem; padding: 40px; text-align: center; }
+
+/* Timeline Design */
+.timeline { position: relative; max-width: 800px; margin: 50px auto; }
+.timeline::after { content: ''; position: absolute; width: 6px; background-color: #007bff; top: 0; bottom: 0; left: 50%; margin-left: -3px; }
+.timeline-item { padding: 10px 40px; position: relative; width: 50%; }
+.timeline-item::after { content: ''; position: absolute; width: 25px; height: 25px; right: -17px; background-color: white; border: 4px solid #007bff; top: 15px; border-radius: 50%; z-index: 1; }
+.left { left: 0; }
+.right { left: 50%; }
+.right::after { left: -12px; }
+.content { padding: 20px; background-color: white; border-radius: 6px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+@media (max-width: 600px) { .timeline::after { left: 31px; } .timeline-item { width: 100%; padding-left: 70px; } .timeline-item::after { left: 15px; } .right { left: 0%; } }
